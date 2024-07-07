@@ -1,0 +1,11 @@
+# #
+from connect import *
+Client_Build = '1.0'
+#
+@tk.message_handler(func=lambda message: True)
+def Handler(message):
+    if str(message.chat.id) == usr_id:
+        Message = message.text
+        print(f'Message sended to you: " {Message} "')
+        tk.send_message(usr_id, input('To send: '))
+tk.polling()
